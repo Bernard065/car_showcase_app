@@ -51,14 +51,27 @@
   @apply 2xl:text-[72px] sm:text-[64px] text-[50px] font-extrabold;
 }
 
-.hero__image-container {
+.hero_image-container {
   @apply xl:flex-[1.5] flex justify-end items-end w-full xl:h-screen;
 }
 
-.hero__image {
+.hero_image {
   @apply relative xl:w-full w-[90%] xl:h-full h-[590px] z-0;
 }
 
-.hero__image-overlay {
+.hero_image-overlay {
   @apply absolute xl:-top-24 xl:-right-1/2 -right-1/4 bg-hero-bg bg-repeat-round -z-10 w-full xl:h-screen h-[590px] overflow-hidden;
+}
+
+/* Start: Footer styles */
+.footer_links {
+  @apply flex-1 w-full flex md:justify-end flex-wrap max-md:mt-10 gap-20;
+}
+
+.footer_link {
+  @apply flex flex-col gap-6 text-base min-w-[170px];
+}
+
+.footer_copyrights_links {
+  @apply flex justify-between items-center flex-wrap mt-10 border-t border-gray-100 sm:px-16 px-6 py-10;
 }
