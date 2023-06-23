@@ -3,7 +3,7 @@ import './globals.css'
 
 
 export const metadata = {
-  title: 'Cars ShowCase',
+  title: 'Bernard\'s Cars ShowCase',
   description: 'Discover the best cars in the world.',
 }
 
