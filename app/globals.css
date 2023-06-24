@@ -93,3 +93,11 @@
 .searchbar {
   @apply flex items-center justify-start max-sm:flex-col w-full relative max-sm:gap-4 max-w-3xl;
 }
+
+.searchbar_item {
+  @apply flex-1 max-sm:w-full flex justify-start items-center relative;
+}
+
+.search-manufacturer_input {
+  @apply w-full h-[48px] pl-12 rounded-l-full max-sm:rounded-full bg-light-white outline-none cursor-pointer text-sm;
+}
