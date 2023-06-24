@@ -75,3 +75,16 @@
 .footer_copyrights_links {
   @apply flex justify-between items-center flex-wrap mt-10 border-t border-gray-100 sm:px-16 px-6 py-10;
 }
+
+/* Start: Home Styles */
+.home_text-container {
+  @apply flex flex-col items-start justify-start gap-y-2.5 text-black-100;
+}
+
+.home_filters {
+  @apply mt-12 w-full flex-between items-center flex-wrap gap-5;
+}
+
+.home_filter-container {
+  @apply flex justify-start flex-wrap items-center gap-2
+}
