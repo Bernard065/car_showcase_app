@@ -101,3 +101,11 @@
 .search-manufacturer_input {
   @apply w-full h-[48px] pl-12 rounded-l-full max-sm:rounded-full bg-light-white outline-none cursor-pointer text-sm;
 }
+
+.search_manufacturer-option {
+  @apply cursor-default select-none py-2 pl-10 pr-4;
+}
+
+.search_manufacturer-options {
+  
+}

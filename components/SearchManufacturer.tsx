@@ -47,7 +47,23 @@ const SearchManufacturer = ({ manufacturer, setManufacturer }: SearchManufacture
             leaveTo='opacity-0'
             afterLeave={() => setQuery('')}
           >
-            <Combobox.Options></Combobox.Options>
+            <Combobox.Options>
+              {filteredManufacturers.length === 0 && query !== '' ? (
+                <Combobox.Option 
+                  value={query}
+                  className='search_manufacturer-option'>
+                  Nothing found.
+                </Combobox.Option>
+              ) : (
+                filteredManufacturers.map((item) => (
+                  <Combobox.Option
+                    key={item}
+                    value={item}
+                    className={({ active }) => `relative search_manufacturer-option ${active ? 'bg-primary-blue text-white' : 'text-gray-900'}`}
+                  >{item}</Combobox.Option>
+                ))
+              )}
+            </Combobox.Options>
           </Transition>
 
     
