@@ -88,3 +88,8 @@
 .home_filter-container {
   @apply flex justify-start flex-wrap items-center gap-2
 }
+
+/* Start: Searchbar styles */
+.searchbar {
+  @apply flex items-center justify-start max-sm:flex-col w-full relative max-sm:gap-4 max-w-3xl;
+}
