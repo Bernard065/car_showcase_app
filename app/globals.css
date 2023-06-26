@@ -114,3 +114,20 @@
   @apply cursor-default select-none py-2 pl-10 pr-4;
 }
 
+
+/* Start: CarCard Styles */
+.car-card {
+  @apply flex flex-col p-6 justify-center items-start text-black-100 bg-primary-blue-100 hover:bg-white hover:shadow-md rounded-3xl;
+}
+
+.car_card-content {
+  @apply w-full flex justify-between items-start gap-2;
+}
+
+.car_card-content_title {
+  @apply text-[22px] leading-[26px] font-bold capitalize;
+}
+
+.car-card_btn-container {
+  @apply hidden group-hover:flex absolute bottom-0 w-full z-10;
+}
