@@ -93,6 +93,10 @@
   @apply mt-16 flex justify-center items-center flex-col gap-2;
 }
 
+.home_cars-wrapper {
+  @apply grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-14;
+}
+
 /* Start: Searchbar styles */
 .searchbar {
   @apply flex items-center justify-start max-sm:flex-col w-full relative max-sm:gap-4 max-w-3xl;
