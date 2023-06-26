@@ -1,8 +1,14 @@
 import { CustomFilter, SearchBar } from '@/components'
+import CarCard from '@/components/CarCard';
 import Hero from '@/components/Hero'
+import { fetchCars } from '@/utilis'
 import Image from 'next/image'
 
-export default function Home() {
+export default async function Home() {
+  const allCars = await fetchCars();
+
+  const isDataEmpty = !Array.isArray(allCars) || allCars.length < 1 || !allCars;
+
   return (
     <main className="overflow-hidden">
       <Hero />
@@ -21,6 +27,22 @@ export default function Home() {
             <CustomFilter />
           </div>
         </div>
+        {!isDataEmpty ? (
+          <section>
+            <div className='home_cars-wrapper'>
+              {allCars?.map((car) => (
+                <CarCard car={car} />
+              ))}
+            </div>
+          </section>
+        ) : (
+          <div className='home_error-container'>
+            <h2 className='text-black text-xl font-bold'>
+              Oops, no cars
+            </h2>
+            <p>{allCars?.message}</p>
+          </div>
+        )}
       </div>
     </main>
   )
