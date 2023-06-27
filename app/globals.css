@@ -114,6 +114,10 @@
   @apply cursor-default select-none py-2 pl-10 pr-4;
 }
 
+.searchbar_input {
+  @apply w-full h-[48px] pl-12 p-4 bg-light-white rounded-r-full max-sm:rounded-full outline-none cursor-pointer text-sm
+}
+
 
 /* Start: CarCard Styles */
 .car-card {
@@ -131,3 +135,5 @@
 .car-card_btn-container {
   @apply hidden group-hover:flex absolute bottom-0 w-full z-10;
 }
+
+
