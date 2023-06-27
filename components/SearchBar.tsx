@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import SearchManufacturer from './SearchManufacturer';
+import SearchButton from './SearchButton';
 
 const SearchBar = () => {
   const [manufacturer, setManufacturer] = useState("");
@@ -15,6 +16,7 @@ const SearchBar = () => {
           setManufacturer={setManufacturer}
         />
 
+        <SearchButton />
       </div>
     </form>
   )
