@@ -16,6 +16,10 @@ const SearchBar = () => {
     }
   };
 
+  const updateSearchParams = (model: string, manufacturer: string) => {}
+  //create a new URLSearchParams object using the current URL search parameters
+  const searchParams = new URLSearchParams(window.location.search);
+
   return (
     <form className='searchbar' onSubmit={handleSearch}>
       <div className='searchbar_item'>
