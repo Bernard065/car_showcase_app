@@ -43,12 +43,12 @@ export interface FilterProps {
     fuel?: string;
 }
 
-export interface CustomButtonProps {
-    isDisabled?: boolean;
-    btnType?: "button" | "submit";
-    containerStyles?: string;
-    textStyles?: string;
+export interface CustomFilterProps {
     title: string;
-    rightIcon?: string;
-    handleClick?: MouseEventHandler<HTMLButtonElement>;
+    options: OptionProps[];
+}
+
+export interface OptionProps {
+    title: string;
+    value: string;
   }
