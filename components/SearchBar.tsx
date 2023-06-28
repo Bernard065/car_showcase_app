@@ -17,8 +17,21 @@ const SearchBar = () => {
   };
 
   const updateSearchParams = (model: string, manufacturer: string) => {}
-  //create a new URLSearchParams object using the current URL search parameters
+  // create a new URLSearchParams object using the current URL search parameters
   const searchParams = new URLSearchParams(window.location.search);
+
+  // updating or deleting the model and manufacturer search parameters based on the model or manufacturer value
+  if (model) {
+    searchParams.set("model", model);
+  } else {
+    searchParams.delete("model");
+  }
+
+  if (manufacturer) {
+    searchParams.set("manufacturer", manufacturer);
+  } else {
+    searchParams.delete("manufacturer");
+  }
 
   return (
     <form className='searchbar' onSubmit={handleSearch}>
