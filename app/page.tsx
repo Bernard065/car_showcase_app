@@ -1,6 +1,7 @@
 import { CustomFilter, SearchBar } from '@/components'
 import CarCard from '@/components/CarCard';
 import Hero from '@/components/Hero'
+import { fuels, yearsOfProduction } from '@/constants';
 import { HomeProps } from '@/types';
 import { fetchCars } from '@/utilis'
 import Image from 'next/image'
@@ -30,8 +31,8 @@ export default async function Home({ searchParams }: HomeProps) {
           <SearchBar />
 
           <div className='home_filter-container'>
-            <CustomFilter />
-            <CustomFilter />
+            <CustomFilter title='fuel' options={fuels} />
+            <CustomFilter title='year' options={yearsOfProduction} />
           </div>
         </div>
         {!isDataEmpty ? (

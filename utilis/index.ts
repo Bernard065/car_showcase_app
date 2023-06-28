@@ -54,6 +54,10 @@ export const calculateCarRent = (city_mpg: number, year: number) => {
 
     // Set the specified search parameter to the given value
   searchParams.set(type, value);
+
+  const newPathname = `${window.location.pathname}?${searchParams.toString()}`;
+
+  return newPathname;
   
     
   };
