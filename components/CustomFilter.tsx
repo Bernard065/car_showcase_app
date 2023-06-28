@@ -10,7 +10,7 @@ import { updateSearchParams } from "@/utilis";
 export default function CustomFilter({ title, options }: CustomFilterProps) {
   const router = useRouter();
 
-  const [selected, setSelected] = useState(options[0]); // State for storing the selected option
+  const [selected, setSelected] = useState(options[0]);
 
   // update the URL search parameters and navigate to the new URL
   const handleUpdateParams = (e: { title: string; value: string }) => {
@@ -53,7 +53,13 @@ export default function CustomFilter({ title, options }: CustomFilterProps) {
                   }
                   value={option}
                 >
-                  
+                  {({ selected }) => (
+                    <>
+                      <span className={`block truncate ${selected ? "font-medium" : "font-normal"}`} >
+                        {option.title}
+                      </span>
+                    </>
+                  )}
                 </Listbox.Option>
               ))}
             </Listbox.Options>
