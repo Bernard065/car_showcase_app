@@ -8,7 +8,13 @@ const SearchBar = () => {
   const [manufacturer, setManufacturer] = useState("");
   const [model, setModel] = useState('');
 
-  const handleSearch = () => {};
+  const handleSearch = (e:React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (manufacturer.trim() === "" && model.trim() === "") {
+      return alert("Please provide an input");
+    }
+  };
 
   return (
     <form className='searchbar' onSubmit={handleSearch}>
