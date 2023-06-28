@@ -3,10 +3,14 @@ import React, { useState } from 'react'
 import SearchManufacturer from './SearchManufacturer';
 import SearchButton from './SearchButton';
 import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+
 
 const SearchBar = () => {
   const [manufacturer, setManufacturer] = useState("");
   const [model, setModel] = useState('');
+
+  const router = useRouter();
 
   const handleSearch = (e:React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -16,22 +20,28 @@ const SearchBar = () => {
     }
   };
 
-  const updateSearchParams = (model: string, manufacturer: string) => {}
-  // create a new URLSearchParams object using the current URL search parameters
-  const searchParams = new URLSearchParams(window.location.search);
+  const updateSearchParams = (model: string, manufacturer: string) => {
+    // create a new URLSearchParams object using the current URL search parameters
+    const searchParams = new URLSearchParams(window.location.search);
 
-  // updating or deleting the model and manufacturer search parameters based on the model or manufacturer value
-  if (model) {
-    searchParams.set("model", model);
-  } else {
-    searchParams.delete("model");
-  }
+    // updating or deleting the model and manufacturer search parameters based on the model or manufacturer value
+    if (model) {
+      searchParams.set("model", model);
+    } else {
+      searchParams.delete("model");
+    }
 
-  if (manufacturer) {
-    searchParams.set("manufacturer", manufacturer);
-  } else {
-    searchParams.delete("manufacturer");
-  }
+    if (manufacturer) {
+      searchParams.set("manufacturer", manufacturer);
+    } else {
+      searchParams.delete("manufacturer");
+    }
+
+    // generate the new pathname with the updated search parameters
+    const newPathname = `${window.location.pathname}?${searchParams.toString()}`;
+
+    router.push(newPathname);
+}
 
   return (
     <form className='searchbar' onSubmit={handleSearch}>
